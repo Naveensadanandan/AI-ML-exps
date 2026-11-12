@@ -17,7 +17,7 @@ df["income"] = df["income"].fillna(df["income"].median())
 df["credit_score"] = df["credit_score"].fillna(df["credit_score"].median())
 df["employment"] = df["employment"].fillna(df["employment"].mode()[0])
 
-gender = df["gender"]                 # keep the sensitive column aside for the fairness check
+                   # keep the sensitive column aside for the fairness check
 df = df.drop(columns=["gender"])      # do not use it as a feature
 df = pd.get_dummies(df, columns=["employment", "education"], drop_first=True)
 
